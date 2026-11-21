@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  --app-accent: #2563eb;
+  --app-accent-hover: #1d4ed8;
+  --app-accent-soft: #eff6ff;
+  --app-accent-text: #1d4ed8;
+  --app-accent-border: #bfdbfe;
+  --app-font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --app-accent: #2563eb;
+  --app-accent-hover: #3b82f6;
+  --app-accent-soft: rgba(37, 99, 235, 0.16);
+  --app-accent-text: #93c5fd;
+  --app-accent-border: rgba(59, 130, 246, 0.35);
+}
+
+@layer base {
+  html {
+    font-family: var(--app-font-family);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.btn-accent {
+  background-color: var(--app-accent);
+  color: #ffffff;
+}
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--app-accent-hover);
+}
+
+.btn-accent-soft {
+  background-color: var(--app-accent-soft);
+  color: var(--app-accent-text);
+  border: 1px solid var(--app-accent-border);
+}
+
+.text-accent {
+  color: var(--app-accent-text);
+}
+
+.border-accent {
+  border-color: var(--app-accent);
+}
+
+.focus-accent:focus {
+  border-color: var(--app-accent);
+}
+
+@media print {
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .print-table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+  }
+
+  .print-table thead {
+    display: table-header-group;
+  }
+
+  .print-table tfoot {
+    display: table-footer-group;
+  }
+
+  .print-table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-section-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+.print-only {
+  display: none;
+}

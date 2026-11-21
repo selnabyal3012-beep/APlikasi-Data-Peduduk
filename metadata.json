@@ -1,0 +1,6 @@
+{
+  "name": "Buku Induk Desa Offline",
+  "description": "Aplikasi pendataan penduduk desa secara offline dan manual lengkap dengan template kosong siap pakai, rekap Kartu Keluarga, impor/ekspor Excel & CSV, serta cetak formulir.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
